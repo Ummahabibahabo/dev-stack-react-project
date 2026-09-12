@@ -4,6 +4,7 @@ import Banner from "./Components/Banner";
 import Navbar from "./Components/Navbar";
 import Technologies from "./Components/Technologies/Technologies";
 import type { TechnologiesType } from "./Components/types";
+import Footer from "./Components/Footer";
 const technologiesPromise = async (): Promise<TechnologiesType[]> => {
   const res = await fetch("/public/data.json");
   const data = res.json();
@@ -11,14 +12,17 @@ const technologiesPromise = async (): Promise<TechnologiesType[]> => {
 };
 function App() {
   return (
-    <div className="container mx-auto px-20 py-10">
-      <Navbar></Navbar>
-      <Banner></Banner>
-      <Suspense fallback={<p>Loading.....</p>}>
-        <Technologies
-          technologiesPromise={technologiesPromise()}
-        ></Technologies>
-      </Suspense>
+    <div>
+      <div className="container mx-auto px-20 py-10">
+        <Navbar></Navbar>
+        <Banner></Banner>
+        <Suspense fallback={<p>Loading.....</p>}>
+          <Technologies
+            technologiesPromise={technologiesPromise()}
+          ></Technologies>
+        </Suspense>
+      </div>
+      <Footer></Footer>
     </div>
   );
 }
