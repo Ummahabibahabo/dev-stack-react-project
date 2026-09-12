@@ -12,6 +12,9 @@ const ExploreTechnologies = ({
   yourStack,
   setYourStack,
 }: ExploreTechnologiesProps) => {
+  const handleRemoveAll = () => {
+    setYourStack([]);
+  };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
       <div className="col-span-1 md:col-span-2 lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
@@ -40,15 +43,21 @@ const ExploreTechnologies = ({
             <p className="font-normal text-[14px] text-[#94A3B8]">
               Your stack is empty
             </p>
-            <button className="border-2 border-red-700 text-[#D82C20] text-[14px]">
-              Remove All{" "}
-            </button>
           </div>
         ) : (
-          <StackSelectedCard
-            yourStack={yourStack}
-            setYourStack={setYourStack}
-          ></StackSelectedCard>
+          <div>
+            <StackSelectedCard
+              yourStack={yourStack}
+              setYourStack={setYourStack}
+            ></StackSelectedCard>
+            <button
+              onClick={handleRemoveAll}
+              className="border-2 border-red-700 text-[#D82C20] text-[14px]
+            px-3 py-1 rounded-xl w-full text-center mt-5"
+            >
+              Remove All
+            </button>
+          </div>
         )}
       </div>
     </div>

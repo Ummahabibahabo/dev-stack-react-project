@@ -1,10 +1,18 @@
 import React from "react";
 import type { TechnologiesType } from "../types";
 import DeleteIcon from "../../assets/delete.png";
+import { toast } from "react-toastify";
 interface StackSelectedProps {
   yourStack: TechnologiesType[];
+  setYourStack: React.Dispatch<React.SetStateAction<TechnologiesType[]>>;
 }
-const StackSelectedCard = ({ yourStack }: StackSelectedProps) => {
+const StackSelectedCard = ({ yourStack, setYourStack }: StackSelectedProps) => {
+  const handleDeleteButton = (name: string) => {
+    const remaingTechnology = yourStack.filter(
+      (technology) => technology.name !== name,
+    );
+    setYourStack(remaingTechnology);
+  };
   return (
     <div className="space-y-5">
       {yourStack.map((technology: TechnologiesType) => {
@@ -19,15 +27,20 @@ const StackSelectedCard = ({ yourStack }: StackSelectedProps) => {
                     alt=""
                   />
                   <div>
-                    <h1 className="font-bold text-[#0F172A] text-[10px]">
+                    <h1 className="font-bold text-[#0F172A] text-[14px]">
                       {technology.name}
                     </h1>
-                    <p className="font-bold text-[#94A3B8] text-[6px]">
+                    <p className="font-bold text-[#94A3B8] text-[10px]">
                       {technology.category}
                     </p>
                   </div>
                 </div>
-                <img className="w-[15px] h-[15px]" src={DeleteIcon} alt="" />
+                <img
+                  onClick={() => handleDeleteButton(technology.name)}
+                  className="w-[15px] h-[15px]"
+                  src={DeleteIcon}
+                  alt=""
+                />
               </div>
             </div>
           </div>

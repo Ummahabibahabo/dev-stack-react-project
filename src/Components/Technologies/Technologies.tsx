@@ -6,7 +6,7 @@ interface TechnologiesProps {
 }
 const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
   const technologies = use(technologiesPromise);
-  const [yourStack, setYourStack] = useState([]);
+  const [yourStack, setYourStack] = useState<TechnologiesType[]>([]);
   return (
     <div>
       <div className="space-y-3">
