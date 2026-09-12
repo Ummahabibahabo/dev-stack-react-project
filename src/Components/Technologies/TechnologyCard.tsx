@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import type { TechnologiesType } from "../types";
 import CoinImg from "../../assets/fi_2107957.png";
 
@@ -21,6 +21,10 @@ const badgeColors: Record<string, string> = {
 };
 
 const TechnologyCard = ({ technology }: TechnologyCardProps) => {
+  const [addButton, setAddButton] = useState<boolean>(false);
+  const handleAddButton = () => {
+    setAddButton(true);
+  };
   return (
     <div className="h-full">
       <div className="border-2 border-gray-300 rounded-xl p-5 bg-white shadow-lg space-y-5 h-full flex flex-col">
@@ -57,8 +61,15 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
           </button>
         </div>
 
-        <button className="text-white bg-black px-3 py-2 rounded-xl w-full mt-auto">
-          Add to Stack
+        <button
+          onClick={handleAddButton}
+          className={
+            addButton
+              ? "text-black bg-gray-300 px-3 py-2 rounded-xl w-full mt-auto font-semibold"
+              : "text-white bg-black px-3 py-2 rounded-xl w-full mt-auto font-semibold"
+          }
+        >
+          {addButton ? "Selected" : " Add to Stack"}
         </button>
       </div>
     </div>
