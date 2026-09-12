@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import type { TechnologiesType } from "../types";
 import ExploreTechnologies from "./ExploreTechnologies";
 interface TechnologiesProps {
@@ -6,7 +6,7 @@ interface TechnologiesProps {
 }
 const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
   const technologies = use(technologiesPromise);
-  console.log(technologies);
+  const [yourStack, setYourStack] = useState([]);
   return (
     <div>
       <div className="space-y-3">
@@ -20,7 +20,11 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
           Pick one technology per category to build your ideal stack.
         </p>
       </div>
-      <ExploreTechnologies technologies={technologies}></ExploreTechnologies>
+      <ExploreTechnologies
+        technologies={technologies}
+        yourStack={yourStack}
+        setYourStack={setYourStack}
+      ></ExploreTechnologies>
     </div>
   );
 };

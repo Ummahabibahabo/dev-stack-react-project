@@ -4,6 +4,8 @@ import CoinImg from "../../assets/fi_2107957.png";
 
 interface TechnologyCardProps {
   technology: TechnologiesType;
+  yourStack: TechnologiesType[];
+  setYourStack: React.Dispatch<React.SetStateAction<TechnologiesType[]>>;
 }
 
 const badgeColors: Record<string, string> = {
@@ -20,14 +22,19 @@ const badgeColors: Record<string, string> = {
   Containers: "text-[#0284C7] bg-[#E0F2FE]",
 };
 
-const TechnologyCard = ({ technology }: TechnologyCardProps) => {
+const TechnologyCard = ({
+  technology,
+  yourStack,
+  setYourStack,
+}: TechnologyCardProps) => {
   const [addButton, setAddButton] = useState<boolean>(false);
   const handleAddButton = () => {
     setAddButton(true);
+    setYourStack([...yourStack, technology]);
   };
   return (
     <div className="h-full">
-      <div className="border-2 border-gray-300 rounded-xl p-5 bg-white shadow-lg space-y-5 h-full flex flex-col">
+      <div className="border-2 border-gray-200 rounded-xl p-5 bg-white shadow-lg space-y-5 h-full flex flex-col">
         <div className="flex justify-between items-center">
           <img className="w-[30px] h-[28px]" src={technology.icon} alt="" />
 
