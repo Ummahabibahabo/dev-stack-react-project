@@ -17,7 +17,7 @@
     "icon": "https://i.ibb.co.com/6cc45q9Q/Vector-1.png",
     "rating": 4.8,
     "difficulty": "Beginner-Friendly",
-    "badge": "Popular"
+    "badge": "Versatile"
   },
   {
     "id": "svelte",
@@ -27,7 +27,7 @@
     "icon": "https://i.ibb.co.com/LXFtVc2G/Svelte-svg.png",
     "rating": 4.7,
     "difficulty": "Intermediate",
-    "badge": "Modern"
+    "badge": "Fast"
   },
   {
     "id": "nextjs",
@@ -47,7 +47,7 @@
     "icon": "https://i.ibb.co.com/jv05QTVS/Node-js-svg.png",
     "rating": 4.8,
     "difficulty": "Intermediate",
-    "badge": "Popular"
+    "badge": "Standard"
   },
   {
     "id": "postgresql",
@@ -67,7 +67,7 @@
     "icon": "https://i.ibb.co.com/4RttfkKB/Redis-svg.png",
     "rating": 4.7,
     "difficulty": "Intermediate",
-    "badge": "Fast"
+    "badge": "Cache"
   },
   {
     "id": "javascript",
@@ -77,7 +77,7 @@
     "icon": "https://i.ibb.co.com/1GbwWKfM/Vector-2.png",
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
-    "badge": "Essential"
+    "badge": "Ubiquitous"
   },
   {
     "id": "typescript",
@@ -87,7 +87,7 @@
     "icon": "https://i.ibb.co.com/j9rR5hsc/Type-Script-svg.png",
     "rating": 4.9,
     "difficulty": "Intermediate",
-    "badge": "Popular"
+    "badge": "Essential"
   },
   {
     "id": "java",
@@ -97,7 +97,7 @@
     "icon": "https://i.ibb.co.com/PZRhb3Nf/Vector-3.png",
     "rating": 4.8,
     "difficulty": "Intermediate",
-    "badge": "Enterprise"
+    "badge": "Robust"
   },
   {
     "id": "tailwindcss",
@@ -107,7 +107,7 @@
     "icon": "https://i.ibb.co.com/1JQZvKft/Vector-5.png",
     "rating": 4.8,
     "difficulty": "Beginner-Friendly",
-    "badge": "Popular"
+    "badge": "Modern"
   },
   {
     "id": "docker",
@@ -117,6 +117,6 @@
     "icon": "https://i.ibb.co.com/fYckw22K/Docker-svg.png",
     "rating": 4.8,
     "difficulty": "Intermediate",
-    "badge": "DevOps"
+    "badge": "Containers"
   }
 ]
