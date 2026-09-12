@@ -22,13 +22,13 @@ const badgeColors: Record<string, string> = {
 
 const TechnologyCard = ({ technology }: TechnologyCardProps) => {
   return (
-    <div>
-      <div className="border-2 border-gray-300 rounded-xl p-5 bg-white shadow">
+    <div className="h-full">
+      <div className="border-2 border-gray-300 rounded-xl p-5 bg-white shadow-lg space-y-5 h-full flex flex-col">
         <div className="flex justify-between items-center">
-          <img className="w-[30px] h-[30px]" src={technology.icon} alt="" />
+          <img className="w-[30px] h-[28px]" src={technology.icon} alt="" />
 
           <button
-            className={`px-3 py-1 text-xs rounded-full border text-[12px] font-semibold ${
+            className={`px-3 py-1 text-xs rounded-full border font-semibold ${
               badgeColors[technology.badge]
             }`}
           >
@@ -40,24 +40,26 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
           {technology.name}
         </h1>
 
-        <p className="font-normal text-12px] text-[#64748B]">
+        <p className="font-normal text-[12px] text-[#64748B]">
           {technology.description}
         </p>
 
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <button className="text-[#475569] bg-[#F1F5F9] px-3 py-1 rounded-xl">
             {technology.category}
           </button>
 
           <button className="text-[#64748B]">{technology.difficulty}</button>
 
-          <button className="text-[#334155] font-semibold flex items-center gap-5">
-            <span className="flex gap-5">
-              <img src={CoinImg} alt="" />
-            </span>
+          <button className="text-[#334155] font-semibold flex items-center gap-2">
+            <img className="w-5 h-5" src={CoinImg} alt="" />
             <span>{technology.rating}</span>
           </button>
         </div>
+
+        <button className="text-white bg-black px-3 py-2 rounded-xl w-full mt-auto">
+          Add to Stack
+        </button>
       </div>
     </div>
   );
