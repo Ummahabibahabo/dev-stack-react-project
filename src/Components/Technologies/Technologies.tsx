@@ -1,6 +1,12 @@
-import React from "react";
-
-const Technologies = () => {
+import React, { use } from "react";
+import type { TechnologiesType } from "../types";
+import ExploreTechnologies from "./ExploreTechnologies";
+interface TechnologiesProps {
+  technologiesPromise: Promise<TechnologiesType[]>;
+}
+const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
+  const technologies = use(technologiesPromise);
+  console.log(technologies);
   return (
     <div>
       <div className="space-y-3">
@@ -12,6 +18,7 @@ const Technologies = () => {
           Pick one technology per category to build your ideal stack.
         </p>
       </div>
+      <ExploreTechnologies technologies={technologies}></ExploreTechnologies>
     </div>
   );
 };
