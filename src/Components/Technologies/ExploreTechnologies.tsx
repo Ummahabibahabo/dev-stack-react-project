@@ -2,6 +2,7 @@ import React from "react";
 import type { TechnologiesType } from "../types";
 import TechnologyCard from "./TechnologyCard";
 import StackSelectedCard from "./StackSelectedCard";
+import { toast } from "react-toastify";
 interface ExploreTechnologiesProps {
   technologies: TechnologiesType[];
   yourStack: TechnologiesType[];
@@ -14,6 +15,7 @@ const ExploreTechnologies = ({
 }: ExploreTechnologiesProps) => {
   const handleRemoveAll = () => {
     setYourStack([]);
+    toast.success("All technologies removed from your stack");
   };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">

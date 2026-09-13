@@ -12,7 +12,7 @@ const Banner = () => {
             Development Stack
           </span>
         </h1>
-        <p className="font-normal md: text-[14px]text-[18px] text-[#475569]">
+        <p className="font-normal text-[14px] md:text-[18px] text-[#475569]">
           Explore frontend, backend, database, and tooling options, <br />
           compare them side by side, and put together the stack that fits your{" "}
           <br /> next project.

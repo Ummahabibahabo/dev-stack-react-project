@@ -37,6 +37,7 @@ const TechnologyCard = ({
 
   const handleAddButton = () => {
     if (isSelected) {
+      toast.warning(`${technology.name} is already in your stack`);
       return;
     }
 
@@ -99,7 +100,7 @@ const TechnologyCard = ({
               : "text-white bg-black px-3 py-2 rounded-xl w-full mt-auto font-semibold"
           }
         >
-          {isSelected ? "Selected" : "Add to Stack"}
+          {isSelected ? "✓ Added to Stack" : "Add to Stack"}
         </button>
       </div>
     </div>
