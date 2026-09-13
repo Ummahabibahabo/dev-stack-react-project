@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import { use, useState } from "react";
 import type { TechnologiesType } from "../types";
 import ExploreTechnologies from "./ExploreTechnologies";
 interface TechnologiesProps {
